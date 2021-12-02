@@ -4,4 +4,5 @@
     <dimen name="main_layout_padding">8dp</dimen>
     <dimen name="title_text_size">18sp</dimen>
     <dimen name="detail_image_margin">16dp</dimen>
+    <dimen name="divider">1dp</dimen>
 </resources>

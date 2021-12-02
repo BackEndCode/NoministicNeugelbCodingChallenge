@@ -21,7 +21,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/divider"
         android:background="@color/cardview_shadow_start_color"
         app:layout_constraintBottom_toBottomOf="@+id/textView_search_title"
         app:layout_constraintStart_toStartOf="parent" />
