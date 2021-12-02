@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Neugelb Coding Challenge</string>
+    <string name="search_title">Search Movie</string>
+    <string name="main_movie_image">Main Movie Banner</string>
+    <string name="release_date">Release date: {0}</string>
+    <string name="rating">Rating: {0}</string>
+    <string name="Internet_failure">Opps: Looks like your internet is not working please retry.</string>
+</resources>
