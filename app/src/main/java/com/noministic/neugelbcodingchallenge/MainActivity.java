@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.noministic.neugelbcodingchallenge.adapters.MoviesAdapter;
+import com.noministic.neugelbcodingchallenge.adapters.SearchCursorAdaptor;
 import com.noministic.neugelbcodingchallenge.api.RequestInterface;
 import com.noministic.neugelbcodingchallenge.api.RetrofitClientInstance;
 import com.noministic.neugelbcodingchallenge.databinding.ActivityMainBinding;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Search list and adapter
     List<String> suggestions;
-    CursorAdapter suggestionAdapter;
+    SearchCursorAdaptor suggestionAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,12 +129,11 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.options_menu, menu);
         SearchView mSearchView = (SearchView) menu.findItem(R.id.search).getActionView();
-        suggestionAdapter = new SimpleCursorAdapter(this,
-                android.R.layout.simple_list_item_1,
-                null,
+        int[] tos = new int[]{R.id.textView_search_title};
+        suggestionAdapter = new SearchCursorAdaptor(this,
+                R.layout.cursor_layout_item,null,
                 new String[]{SearchManager.SUGGEST_COLUMN_TEXT_1},
-                new int[]{android.R.id.text1},
-                0);
+                tos);
         suggestions = new ArrayList<>();
 
         mSearchView.setSuggestionsAdapter(suggestionAdapter);
